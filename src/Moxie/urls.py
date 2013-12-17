@@ -5,9 +5,9 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'Moxie.views.home', name='home'),
-    # url(r'^Moxie/', include('Moxie.foo.urls')),
+                       url(r'^$','Moxie.views.home', name='home'),
+                       url(r'^job$','Moxie.views.job', name='job'),
+                       url(r'^stopped$','Moxie.views.stopped', name='stopped'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
