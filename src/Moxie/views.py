@@ -13,9 +13,11 @@ jobs = MockJobs('/opt/ot/jobs')
 def home(request):
     return HttpResponse("MockHost")
 
+#TODO: add load
+
 def job(request):
     return HttpResponse(jobs.next())
 
 def stopped(request):
     jobs.reset()
-    return HttpResponse("Stopped - reset jobs")
+    return HttpResponse("Stopped - reset jobs\n")
