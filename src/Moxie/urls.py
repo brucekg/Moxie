@@ -7,7 +7,9 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
                        url(r'^$','Moxie.views.home', name='home'),
                        url(r'^job$','Moxie.views.job', name='job'),
-                       url(r'^stopped$','Moxie.views.stopped', name='stopped'),
+                       url(r'^load$','Moxie.views.load', name='load'),
+                       url(r'^stopped$','Moxie.views.reset', name='stopped'),
+                       url(r'^reset$','Moxie.views.reset', name='reset'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
