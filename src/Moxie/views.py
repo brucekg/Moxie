@@ -10,10 +10,6 @@ from mock_jobs import MockJobs
 
 jobs = MockJobs()
 
-def home(request):
-    return HttpResponse("MockHost - home\n")
-
-#TODO: add load
 def load(request):
     source = request.GET['source']
     jobs.load(source)
