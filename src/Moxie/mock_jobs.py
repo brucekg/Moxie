@@ -23,13 +23,13 @@ class MockJobs(object):
         jobs = []
         i = 0
         while i < len(buf):
-            j = buf.find('{', i)
+            j = buf.find('~', i)
             if j == -1:
                 break
-            k = buf.find('}', j)
+            j += 1
+            k = buf.find('~', j)
             if k == -1:
                 break
-            k += 1
             
             jobs.append(json.loads(buf[j:k]))
             i = k
@@ -64,8 +64,8 @@ class MockJobs(object):
         
         if self.index < len(self.jobs):
             d = self.jobs[self.index]
-            d['job_id'] = self.data['job_id']
-            self.data['job_id'] += 1
+            #d['job_id'] = self.data['job_id']
+            #self.data['job_id'] += 1
             r = json.dumps(d)
             open(self.fn, 'w').write(json.dumps(self.data))
             self.index += 1
