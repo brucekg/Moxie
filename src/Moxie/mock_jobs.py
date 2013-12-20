@@ -21,18 +21,7 @@ class MockJobs(object):
         f.close()
         
         jobs = []
-        i = 0
-        while i < len(buf):
-            j = buf.find('~', i)
-            if j == -1:
-                break
-            j += 1
-            k = buf.find('~', j)
-            if k == -1:
-                break
-            
-            jobs.append(json.loads(buf[j:k]))
-            i = k
+        jobs.append(json.loads(buf))
         
         self.jobs = jobs
         self.reset()
