@@ -53,8 +53,9 @@ class MockJobs(object):
         
         if self.index < len(self.jobs):
             d = self.jobs[self.index]
-            #d['job_id'] = self.data['job_id']
-            #self.data['job_id'] += 1
+            if d['job_id'] == '0':
+                d['job_id'] = str(self.data['job_id'])
+                self.data['job_id'] += 1
             r = json.dumps(d)
             open(self.fn, 'w').write(json.dumps(self.data))
             self.index += 1
