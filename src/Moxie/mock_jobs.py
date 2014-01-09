@@ -13,6 +13,8 @@ class MockJobs(object):
         self.jobs = []
         self.index = 0
         self.data = None
+        self.none_limit = 0
+        self.none_count = 0
         return
         
     def load(self, source):
@@ -60,5 +62,10 @@ class MockJobs(object):
             open(self.fn, 'w').write(json.dumps(self.data))
             self.index += 1
         else:
-            r = '{"operation":"stop"}'
+            if self.none_count >= self.none_limit:
+                r = '{"operation":"stop"}'
+            else:
+                r = '{"operation":"none"}'
+                self.none_count += 1
+                
         return r
