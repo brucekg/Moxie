@@ -5,7 +5,9 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$','Moxie.views.job', name='job'),
+                       url(r'^job$','Moxie.views.job', name='job'),
+                       url(r'^local$','Moxie.views.local', name='local'),
+                       url(r'^record$','Moxie.views.record', name='record'),
                        url(r'^load$','Moxie.views.load', name='load'),
                        url(r'^stopped$','Moxie.views.reset', name='stopped'),
                        url(r'^reset$','Moxie.views.reset', name='reset'),
