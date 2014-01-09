@@ -6,6 +6,7 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
                        url(r'^job$','Moxie.views.job', name='job'),
+                       url(r'^set$','Moxie.views.param', name='set'),
                        url(r'^local$','Moxie.views.local', name='local'),
                        url(r'^record$','Moxie.views.record', name='record'),
                        url(r'^load$','Moxie.views.load', name='load'),

@@ -20,6 +20,12 @@ def local(request):
     job_source = open(source,'r').read()
     return HttpResponse(job_source)
     
+def param(request):
+    value = request.GET['none']
+    if value != None:
+        jobs.none_limit = int(value)
+    return HttpResponse("MockHost - param\n")
+    
 def job(request):
     return HttpResponse(jobs.next())
 
@@ -28,4 +34,5 @@ def reset(request):
     return HttpResponse("MockHost - reset\n")
 
 def record(request):
-    return HttpResponse("MockHost - record\n")
+    #TODO: display POST
+    return HttpResponse("MockHost - record == %s\n" % request.body)
