@@ -61,6 +61,7 @@ class MockJobs(object):
             r = json.dumps(d)
             open(self.fn, 'w').write(json.dumps(self.data))
             self.index += 1
+            self.none_count = 0
         else:
             if self.none_count >= self.none_limit:
                 r = '{"operation":"stop"}'
