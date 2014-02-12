@@ -37,7 +37,7 @@ class MockJobs(object):
             else:
                 raise Exception("%s is not a file." % fn)
         else:
-            self.data = {"job_id":2000}
+            self.data = {"job_id":3000}
         
         self.fn = fn
 
