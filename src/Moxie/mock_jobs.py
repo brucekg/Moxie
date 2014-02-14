@@ -51,7 +51,8 @@ class MockJobs(object):
     def next(self):
         
         if self.data == None:
-            return "MockJobs - Jobs Not Loaded\n"
+            r = '{"operation":"stop", "sea_reason":"MockJobs - Jobs Not Loaded"}'
+            return r
         
         if self.index < len(self.jobs):
             d = self.jobs[self.index]
