@@ -36,6 +36,10 @@ class MockJobs(object):
     
     def next(self):
         
+        if self.data == None:
+            r = '{"operation":"stop", "sea_reason":"MockJobs - Jobs Not Loaded"}'
+            return r
+        
         if self.index < len(self.jobs):
             d = self.jobs[self.index]
             r = json.dumps(d)
