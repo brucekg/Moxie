@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+                       url(r'^getlogins/oss$','Moxie.views.job', name='job'),
                        url(r'^job$','Moxie.views.job', name='job'),
                        url(r'^set$','Moxie.views.param', name='set'),
                        url(r'^local$','Moxie.views.local', name='local'),
